@@ -46,6 +46,7 @@
         isHidden: function () {
             console.log('TodoView#isHidden');
             var isCompleted = this.model.get('completed');
+            console.log(isCompleted, global.App.TodoFilter)
             return (
                 (!isCompleted && global.App.TodoFilter === 'completed') ||
                 (isCompleted && global.App.TodoFilter === 'active')
