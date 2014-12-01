@@ -88,7 +88,7 @@
          * @param {Event} e
          */
         updateOnEnter: function (e) {
-            console.log('TodoView#updateOnEnter');
+            console.log('TodoView#updateOnEnter', e);
             if (e.which === ENTER_KEY) {
                 this.close();
             }

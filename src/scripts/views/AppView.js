@@ -14,6 +14,7 @@
             this.$input = this.$('#new-todo');
             this.$footer = this.$('#footer');
             this.$main = this.$('#main');
+            this.$list = this.$('#todo-list');
 
             this.listenTo(global.App.TodoCollection, 'add', this.addOne);
             this.listenTo(global.App.TodoCollection, 'reset', this.addAll);
@@ -67,7 +68,7 @@
             var view = new global.App.TodoView({
                 model: todo,
             });
-            $('#todo-list').append(view.render().el);
+            this.$list.append(view.render().el);
         },
 
         /**
@@ -75,7 +76,7 @@
          */
         addAll: function () {
             console.log('AppView#addAll');
-            this.$('#todo-list').html('');
+            this.$list.html('');
             global.App.TodoCollection.each(this.addOne, this);
         },
 
